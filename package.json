@@ -12,11 +12,24 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.32",
     "@types/react-dom": "18.0.11",
+    "@types/styled-components": "^5.1.26",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "styled-components": "^5.3.9",
     "typescript": "5.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.4",
+    "@types/aos": "^3.0.4",
+    "@types/prettier": "^2.7.2",
+    "aos": "^2.3.4",
+    "babel-plugin-styled-components": "^2.0.7",
+    "prettier": "^2.8.6"
   }
 }
