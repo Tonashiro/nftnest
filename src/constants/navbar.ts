@@ -11,7 +11,7 @@ export const navLinks: INavbar = {
   },
   link3: {
     text: "Upload NFT",
-    link: "/create-nft",
+    link: "/upload-nft",
   },
   link4: {
     text: "Mint NFT",

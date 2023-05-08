@@ -30,6 +30,8 @@
     "@types/prettier": "^2.7.2",
     "aos": "^2.3.4",
     "babel-plugin-styled-components": "^2.0.7",
-    "prettier": "^2.8.6"
+    "prettier": "^2.8.6",
+    "react-loading": "^2.0.3",
+    "react-notifications-component": "^4.0.1"
   }
 }

@@ -53,7 +53,7 @@ const Footer: React.FC<IFooter> = () => {
           <Social>
             <Link href="https://github.com/tonashiro">
               <Image
-                src="https://d2zv2ciw0ln4h1.cloudfront.net/uploads/Github.grey_e7381d15e3.svg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFFfFfWc1kVRvfJWuttlp1ZgF3BsYZEjUhag&usqp=CAU"
                 alt="GitHub logo image"
                 width={30}
                 height={30}
