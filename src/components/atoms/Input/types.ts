@@ -1,9 +1,16 @@
 import { IUploadNFT } from "./../../organisms/UploadNFT/types";
 import { IContract } from "./../../organisms/CreateContractPage/types";
 import { Dispatch, SetStateAction } from "react";
+import { ITransfer } from "@organisms/TransferNFTPage/types";
+import { IUpdate } from "@organisms/UpdateNFTPage/types";
+import { IMint } from "@organisms/MintNFTPage/types";
 
 export interface IInput {
   name: string;
   placeholder: string;
-  setter: Dispatch<SetStateAction<IContract | IUploadNFT>>;
+  setter: SetterDispatch;
 }
+
+export type SetterDispatch = Dispatch<SetStateAction<IContract | IUploadNFT | ITransfer | IUpdate | IMint>>;
+
+export type InputState = IContract | IUploadNFT | ITransfer | IUpdate | IMint;

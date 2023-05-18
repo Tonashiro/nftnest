@@ -2,6 +2,9 @@ import { StyledButtonProps } from "./types";
 import styled from "styled-components";
 
 export const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1%;
   border-radius: 16px;
   cursor: pointer;
@@ -20,7 +23,7 @@ export const StyledButton = styled.a<StyledButtonProps>`
   font-size: 1rem;
   line-height: 24px;
   font-weight: 600;
-  
+
   transition: all 0.2s;
 
   &.isConnected {

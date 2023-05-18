@@ -3,7 +3,7 @@ import { INavbar } from "@molecules/Navbar/types";
 export const navLinks: INavbar = {
   link1: {
     text: "My NFTs",
-    link: "/nfts",
+    link: "/my-nfts",
   },
   link2: {
     text: "Create Contract",
