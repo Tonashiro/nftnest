@@ -4,6 +4,9 @@ import { InputState } from "@atoms/Input/types";
 import { InputWrapper, PageWrapper } from "@styles/ GlobalStyle";
 import React, { useState } from "react";
 import { Button } from "@atoms/Button";
+import { ReactNotifications } from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+import { notification } from "@utils/notification";
 
 const TransferNFTPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -13,31 +16,40 @@ const TransferNFTPage = () => {
     transfer_to: "",
   });
 
-  const transferNFT = async () => {};
+  const transferNFT = async () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      notification(`NFT Succesfully Transfered`, "success", "Transfer transaction hash...");
+    }, 3000);
+  };
 
   return (
-    <PageWrapper>
-      <InputWrapper>
-        <Input name="nft_uid" placeholder="Insira o UID do NFT que deseja transferir" setter={setTransferInfo} />
-        <Input
-          name="contract_id"
-          placeholder="Insira o contrato referente a NFT que será transferida"
-          setter={setTransferInfo}
-        />
-        <Input
-          name="transfer_to"
-          placeholder="Insira o endereço da carteira que receberá a NFT"
-          setter={setTransferInfo}
-        />
-        {isLoading ? (
-          <Button disabled style={{ width: "fit-content" }}>
-            <ReactLoading type="spinningBubbles" height="auto" width={40} />
-          </Button>
-        ) : (
-          <Button onClick={transferNFT}>Upload NFT</Button>
-        )}
-      </InputWrapper>
-    </PageWrapper>
+    <>
+      <ReactNotifications />
+      <PageWrapper>
+        <InputWrapper>
+          <Input name="nft_uid" placeholder="Insira o UID do NFT que deseja transferir" setter={setTransferInfo} />
+          <Input
+            name="contract_id"
+            placeholder="Insira o contrato referente a NFT que será transferida"
+            setter={setTransferInfo}
+          />
+          <Input
+            name="transfer_to"
+            placeholder="Insira o endereço da carteira que receberá a NFT"
+            setter={setTransferInfo}
+          />
+          {isLoading ? (
+            <Button disabled style={{ width: "fit-content" }}>
+              <ReactLoading type="spinningBubbles" height="30px" width={40} />
+            </Button>
+          ) : (
+            <Button onClick={transferNFT}>Transfer NFT</Button>
+          )}
+        </InputWrapper>
+      </PageWrapper>
+    </>
   );
 };
 

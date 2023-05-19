@@ -3,7 +3,7 @@ import { navLinks } from "@constants/navbar";
 import { useScrollListener } from "@hooks/useScrollListener";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button } from "../../atoms/Button";
+import { WalletButton } from "../../atoms/WalletButton";
 import { INavbar } from "@molecules/Navbar/types";
 import Image from "next/image";
 
@@ -42,14 +42,14 @@ const Navbar: React.FC<INavbar> = () => {
             })}
         </NavMenu>
         {currentAccount.length > 1 ? (
-          <Button href="/my-nfts" isConnected={true}>
+          <WalletButton href="/my-nfts" isConnected={true} onClick={() => {}}>
             {currentAccount.slice(0, 6)}...
             {currentAccount.slice(currentAccount.length - 4)}
-          </Button>
+          </WalletButton>
         ) : (
-          <Button isConnected={false} onClick={() => console.log("connect wallet function")}>
+          <WalletButton isConnected={false} onClick={() => console.log("connect wallet function")}>
             Connect Wallet
-          </Button>
+          </WalletButton>
         )}
       </NavContent>
     </Nav>

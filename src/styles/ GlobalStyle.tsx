@@ -85,7 +85,7 @@ export const PageWrapper = styled.div`
   justify-content: center;
 
   width: 100%;
-  height: 80vh;
+  height: 100vh;
 
   background-color: #0f0e13;
   background-image: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
@@ -98,4 +98,32 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 40%;
+`;
+
+export const FileInput = styled.input.attrs({
+  type: "file",
+})`
+  // Hide the default file input
+  display: none;
+`;
+
+export const FileInputLabel = styled.label`
+  padding: 1%;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  width: fit-content;
+  cursor: pointer;
+  background-color: #a1375c;
+
+  color: white;
+  white-space: nowrap;
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 600;
+
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;

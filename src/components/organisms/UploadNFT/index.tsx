@@ -4,49 +4,46 @@ import { InputWrapper, PageWrapper } from "@styles/ GlobalStyle";
 import ReactLoading from "react-loading";
 import { Button } from "@atoms/Button";
 import { InputState } from "@atoms/Input/types";
+import { FileSelector } from "@atoms/FileSelector";
+import { ReactNotifications } from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+import { notification } from "@utils/notification";
 
 const UploadNFTPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [nftInfo, setNFftInfo] = useState<InputState>({
+  const [nftInfo, setNftInfo] = useState<InputState>({
     name: "",
     description: "",
     file_url: "",
   });
 
-  const handleFileInputChange = async (e: any) => {
-    const currentIMG = e.target.files[0];
-
-    const myPromisse = new Promise((resolve) => {
-      let reader = new FileReader();
-      reader.readAsDataURL(currentIMG);
-      reader.onload = () => {
-        resolve(reader.result);
-      };
-    });
-
-    await myPromisse;
-
-    setNFftInfo({ ...nftInfo, file_url: currentIMG });
+  const uploadToIPFS = async () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      notification(`NFT Succesfully Uploaded`, "success", "NFT uploaded to ipfs hash...");
+    }, 3000);
   };
 
-  const uploadToIPFS = async () => {};
-
   return (
-    <PageWrapper>
-      <InputWrapper>
-        <Input name="name" placeholder="Digite o nome do NFT" setter={setNFftInfo} />
-        <Input name="description" placeholder="Digite a descrição do NFT" setter={setNFftInfo} />
-        <input type="file" name="file" onChange={handleFileInputChange} />
+    <>
+      <ReactNotifications />
+      <PageWrapper>
+        <InputWrapper>
+          <Input name="name" placeholder="Digite o nome do NFT" setter={setNftInfo} />
+          <Input name="description" placeholder="Digite a descrição do NFT" setter={setNftInfo} />
+          <FileSelector info={nftInfo} setter={setNftInfo} />
 
-        {isLoading ? (
-          <Button disabled style={{width: "fit-content"}}>
-            <ReactLoading type="spinningBubbles" height="auto" width={40} />
-          </Button>
-        ) : (
-          <Button onClick={uploadToIPFS}>Upload NFT</Button>
-        )}
-      </InputWrapper>
-    </PageWrapper>
+          {isLoading ? (
+            <Button disabled>
+              <ReactLoading type="spinningBubbles" height="30px" width={40} />
+            </Button>
+          ) : (
+            <Button onClick={uploadToIPFS}>Upload NFT</Button>
+          )}
+        </InputWrapper>
+      </PageWrapper>
+    </>
   );
 };
 

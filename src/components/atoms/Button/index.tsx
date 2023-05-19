@@ -1,14 +1,17 @@
 import { HTMLAttributes } from "react";
-import { ButtonWrapper, StyledButton } from "./styles";
+import { StyledButton } from "./styles";
 import { IButton } from "./types";
 
-const Button: React.FC<IButton & HTMLAttributes<HTMLButtonElement>> = ({ href, children, isConnected, ...props }) => {
+const Button: React.FC<IButton & HTMLAttributes<HTMLButtonElement>> = ({
+  children,
+  onClick,
+  disabled,
+  ...props
+}) => {
   return (
-    <ButtonWrapper>
-      <StyledButton type="button" href={href} isConnected={!!isConnected}>
-        {children}
-      </StyledButton>
-    </ButtonWrapper>
+    <StyledButton onClick={onClick} disabled={disabled}>
+      {children}
+    </StyledButton>
   );
 };
 

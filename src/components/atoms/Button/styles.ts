@@ -1,39 +1,32 @@
-import { StyledButtonProps } from "./types";
 import styled from "styled-components";
 
-export const ButtonWrapper = styled.div`
+export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1%;
-  border-radius: 16px;
-  cursor: pointer;
 
-  background-color: #1098fc;
-  border: none;
-  &:hover {
-    background-color: #037dd6;
-  }
-`;
+  background: linear-gradient(90deg, #492238 25%, #000 120%) var(--_p, 100%) / 200% no-repeat;
+  border: 2px solid white;
+  border-radius: 80px;
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
 
-export const StyledButton = styled.a<StyledButtonProps>`
-  text-decoration: none;
   color: white;
-  white-space: nowrap;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 24px;
-  font-weight: 600;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
 
-  transition: all 0.2s;
+  cursor: pointer;
+  transition: all 0.3s;
 
-  &.isConnected {
-    background-color: rgb(242, 246, 255);
-    color: rgb(46, 125, 175);
-    border: none;
-    outline: none;
-    &:hover {
-      background-color: rgb(242, 246, 255);
-      opacity: 0.8;
-    }
+  &:hover {
+    --_p: 0%;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
   }
 `;

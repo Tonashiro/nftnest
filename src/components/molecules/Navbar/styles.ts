@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Nav = styled.nav`
   position: fixed;
   width: 100%;
-  z-index: 9999;
+  z-index: 9;
 `;
 
 export const NavContent = styled.div<NavProps>`
