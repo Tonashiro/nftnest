@@ -1,10 +1,11 @@
 import { Step } from "@molecules/Step";
-import { Hero, Container, AOSWrapper } from "@organisms/HomePage/HomePage.styles";
+import { Container, AOSWrapper } from "@organisms/HomePage/HomePage.styles";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ContentWrapper } from "./HomePage.styles";
 import { steps } from "@constants/steps";
+import { Hero } from "@molecules/Hero";
 
 const HomePage = () => {
   useEffect(() => {
