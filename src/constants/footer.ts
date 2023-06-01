@@ -4,7 +4,7 @@ export const footerLinks: IFooter = {
   row1: {
     link1: {
       text: "My NFTs",
-      link: "/nfts",
+      link: "/my-nfts",
     },
     link2: {
       text: "Create Contract",
@@ -12,7 +12,7 @@ export const footerLinks: IFooter = {
     },
     link3: {
       text: "Upload NFT",
-      link: "/create-nft",
+      link: "/upload-nft",
     },
   },
   row2: {
@@ -27,16 +27,6 @@ export const footerLinks: IFooter = {
     link3: {
       text: "Transfer NFT",
       link: "/transfer-nft",
-    },
-  },
-  row3: {
-    link1: {
-      text: "About us",
-      link: "/about-us",
-    },
-    link2: {
-      text: "FAQ",
-      link: "/faq",
     },
   },
 };
