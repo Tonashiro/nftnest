@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import { useMetamaskState } from '../../context/MetamaskContext';
 import ReactLoading from "react-loading";
 
 import { NFTCard } from "@atoms/NFTCard";
 import { MainList, LoadingContainer } from "./styles";
 import { INFTCard } from "@atoms/NFTCard/types";
 import { PageWrapper } from "@styles/ GlobalStyle";
+import { useMetamaskState } from "@context/MetamaskContext";
 
 const MyNFTSPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [allNfts, setAllNfts] = useState<INFTCard | undefined>(undefined);
-  // const { currentAccount } = useMetamaskState();
+  const { currentAccount } = useMetamaskState();
 
   useEffect(() => {
     const getNfts = async () => {
       setIsLoading(true);
-      const url = `https://api.nftport.xyz/v0/accounts/0xf5663d0eee3620c4a88e28e392aac72d077a8c4d`;
-      const chain = process.env.NEXT_PUBLIC_APP_CHAIN;
+      const url = `https://api.nftport.xyz/v0/accounts/${currentAccount}`;
       const AUTHORIZATION = process.env.NEXT_PUBLIC_NFTPORT_API_KEY;
 
       console.log(AUTHORIZATION);
       await axios
         .get(url, {
           params: {
-            chain,
+            chain: "goerli",
             include: "metadata",
           },
           headers: {
@@ -45,6 +44,8 @@ const MyNFTSPage = () => {
 
     getNfts();
   }, []);
+
+  console.log(allNfts);
 
   return (
     <PageWrapper>

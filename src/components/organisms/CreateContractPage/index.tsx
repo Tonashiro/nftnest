@@ -7,20 +7,46 @@ import React, { useState } from "react";
 import { ReactNotifications } from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 import { notification } from "@utils/notification";
+import axios from "axios";
 
-const CreateContractPage = () => {
+const CreateContractPage: React.FC<{ userWallet: string }> = ({ userWallet }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [contractInfo, setContractInfo] = useState<InputState>({
+  const [contractInfo, setContractInfo] = useState<any>({
     name: "",
     symbol: "",
   });
 
   const createContract = async () => {
     setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      notification(`Contract Succesfully Created`, "success", "Contract hash...");
-    }, 3000);
+    const options = {
+      method: "POST",
+      url: "https://api.nftport.xyz/v0/contracts",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: process.env.NEXT_PUBLIC_NFTPORT_API_KEY,
+      },
+      data: {
+        chain: "goerli",
+        name: contractInfo.name,
+        symbol: contractInfo.symbol,
+        owner_address: userWallet,
+        metadata_updatable: true,
+        type: "erc721",
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log("Contract Deployed!", response.data);
+        notification("Contract Created and Deployed!", "success", response?.data.transaction_external_url);
+        setIsLoading(false);
+      })
+      .catch(function (error) {
+        console.error(error);
+        notification("Contract Creation Failed!", "danger", error.toString());
+        setIsLoading(false);
+      });
   };
 
   return (
