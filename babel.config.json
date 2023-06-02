@@ -2,9 +2,9 @@
   "presets": [
     "@babel/preset-env",
     ["@babel/preset-react", { "runtime": "automatic" }],
-    "@babel/preset-typescript"
+    "@babel/preset-typescript",
+    "next/babel"
   ],
-  "presets": ["next/babel"],
   "plugins": [["styled-components", { "ssr": true }]],
   "env": {
     "test": {

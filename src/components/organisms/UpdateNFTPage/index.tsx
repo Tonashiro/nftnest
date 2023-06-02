@@ -53,7 +53,7 @@ const UpdateNFTPage = () => {
       <PageWrapper>
         <InputWrapper>
           <Input name="update_contract" placeholder="Digite o endereço do contrato" setter={setUpdateInfo} />
-          <Input name="update_nft_uid" placeholder="Digite o UID da NFT" setter={setUpdateInfo} />
+          <Input name="update_nft" placeholder="Digite o UID da NFT" setter={setUpdateInfo} />
           <Input name="update_metadata" placeholder="Insira o novo metadata da NFT" setter={setUpdateInfo} />
 
           {isLoading ? (
