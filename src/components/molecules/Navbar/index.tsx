@@ -11,7 +11,7 @@ const Navbar: React.FC<INavbar> = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [navBackground, setNavBackground] = useState(false);
   const scroll = useScrollListener();
-  const [currentAccount, setCurrentAccount] = useState("");
+  const [currentAccount, _] = useState("");
 
   useEffect(() => {
     if (scroll.y > 250 && scroll.y - scroll.lastY > 0) setIsNavVisible(false);

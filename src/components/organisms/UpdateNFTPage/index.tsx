@@ -3,7 +3,6 @@ import { Input } from "@atoms/Input";
 import { InputWrapper, PageWrapper } from "@styles/ GlobalStyle";
 import ReactLoading from "react-loading";
 import { Button } from "@atoms/Button";
-import { InputState } from "@atoms/Input/types";
 import { ReactNotifications } from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 import { notification } from "@utils/notification";

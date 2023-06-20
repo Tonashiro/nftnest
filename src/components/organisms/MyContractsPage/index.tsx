@@ -4,7 +4,6 @@ import {
   ContractAddress,
   ContractName,
   ContractSymbol,
-  Divider,
   Header,
   HeaderAddress,
   HeaderName,
@@ -15,7 +14,7 @@ import {
 } from "@organisms/MyContractsPage/styles";
 import { LoadingContainer } from "@organisms/MyNFTSPage/styles";
 import { PageWrapper } from "@styles/ GlobalStyle";
-import axios, { all } from "axios";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const MyContractsPage = () => {
@@ -49,7 +48,7 @@ const MyContractsPage = () => {
     };
 
     getContracts();
-  }, []);
+  }, [currentAccount]);
 
   return (
     <PageWrapper>

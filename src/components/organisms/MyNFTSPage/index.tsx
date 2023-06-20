@@ -43,7 +43,7 @@ const MyNFTSPage = () => {
     };
 
     getNfts();
-  }, []);
+  }, [currentAccount]);
 
   console.log(allNfts);
 
