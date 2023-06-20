@@ -83,6 +83,7 @@ export const PageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   width: 100%;
   height: 100vh;
@@ -126,4 +127,35 @@ export const FileInputLabel = styled.label`
   &:hover {
     opacity: 0.8;
   }
+`;
+
+export const Result = styled.h3`
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  padding-top: 3rem;
+`;
+
+export const Note = styled.span`
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: red;
+`;
+
+export const Unauthenticated = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: #0f0e13;
+  background-image: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+  background-repeat: repeat-y;
+  font-size: 3rem;
+  font-weight: 700;
+  width: 100%;
+  height: 80vh;
 `;

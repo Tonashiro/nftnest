@@ -19,17 +19,37 @@ export const TextWrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: bold;
-  color: white;
+  background-color: red;
+
+  background-image: linear-gradient(45deg, #6cc3f0, #a1375c);
+
+  background-size: 100%;
+  background-repeat: repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 
   width: 100%;
 `;
 
 export const Subtitle = styled.h3`
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   color: white;
 
   width: 100%;
+
+  background-image: linear-gradient(45deg, #6cc3f0, #a1375c);
+
+  background-size: 100%;
+  background-repeat: repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 `;

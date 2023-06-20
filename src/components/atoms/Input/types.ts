@@ -1,4 +1,4 @@
-import { IUploadNFT } from "./../../organisms/UploadNFT/types";
+import { IUploadNFT } from "../../organisms/UploadMetadata/types";
 import { IContract } from "./../../organisms/CreateContractPage/types";
 import { Dispatch, SetStateAction } from "react";
 import { ITransfer } from "@organisms/TransferNFTPage/types";

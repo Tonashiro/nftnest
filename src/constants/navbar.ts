@@ -6,22 +6,26 @@ export const navLinks: INavbar = {
     link: "/my-nfts",
   },
   link2: {
+    text: "My Contracts",
+    link: "/my-contracts",
+  },
+  link3: {
     text: "Create Contract",
     link: "/create-contract",
   },
-  link3: {
-    text: "Upload NFT",
-    link: "/upload-nft",
-  },
   link4: {
+    text: "Upload Metadata",
+    link: "/upload-metadata",
+  },
+  link5: {
     text: "Mint NFT",
     link: "/mint",
   },
-  link5: {
+  link6: {
     text: "Update NFT",
     link: "/update-nft",
   },
-  link6: {
+  link7: {
     text: "Transfer NFT",
     link: "/transfer-nft",
   },

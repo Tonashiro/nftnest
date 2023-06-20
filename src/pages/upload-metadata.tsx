@@ -1,17 +1,17 @@
 import { useMetamaskState } from "@context/MetamaskContext";
-import { MyNFTSPage } from "@organisms/MyNFTSPage";
+import { UploadMetadataPage } from "@organisms/UploadMetadata";
 import { Unauthenticated } from "@styles/ GlobalStyle";
 import Head from "next/head";
 
-export default function MyNFTS() {
+export default function UploadMetadata() {
   const { currentAccount } = useMetamaskState();
 
   return (
     <>
       <Head>
-        <title>NFTNest | My NFTs</title>
+        <title>NFTNest | Upload NFT</title>
       </Head>
-      {currentAccount ? <MyNFTSPage /> : <Unauthenticated>Connect Your Wallet</Unauthenticated>}
+      {currentAccount ? <UploadMetadataPage /> : <Unauthenticated>Connect Your Wallet</Unauthenticated>}
     </>
   );
 }

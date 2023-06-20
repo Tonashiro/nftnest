@@ -1,9 +1,9 @@
-import { CreateContractPage } from "@organisms/CreateContractPage";
+import { MyContractsPage } from "@organisms/MyContractsPage";
 import { useMetamaskState } from "@context/MetamaskContext";
 import Head from "next/head";
 import { Unauthenticated } from "@styles/ GlobalStyle";
 
-export default function CreateContract() {
+export default function MyContracts() {
   const { currentAccount } = useMetamaskState();
 
   return (
@@ -11,11 +11,7 @@ export default function CreateContract() {
       <Head>
         <title>NFTNest | Create Contract</title>
       </Head>
-      {currentAccount ? (
-        <CreateContractPage userWallet={currentAccount as string} />
-      ) : (
-        <Unauthenticated>Connect Your Wallet</Unauthenticated>
-      )}
+      {currentAccount ? <MyContractsPage /> : <Unauthenticated>Connect Your Wallet</Unauthenticated>}
     </>
   );
 }

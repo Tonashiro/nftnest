@@ -7,12 +7,16 @@ export const footerLinks: IFooter = {
       link: "/my-nfts",
     },
     link2: {
+      text: "My Contracts",
+      link: "/my-contracts",
+    },
+    link3: {
       text: "Create Contract",
       link: "/create-contract",
     },
-    link3: {
-      text: "Upload NFT",
-      link: "/upload-nft",
+    link4: {
+      text: "Upload Metadata",
+      link: "/upload-metadata",
     },
   },
   row2: {

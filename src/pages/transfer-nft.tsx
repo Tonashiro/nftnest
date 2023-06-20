@@ -1,5 +1,6 @@
 import { useMetamaskState } from "@context/MetamaskContext";
 import { TransferNFTPage } from "@organisms/TransferNFTPage";
+import { Unauthenticated } from "@styles/ GlobalStyle";
 import Head from "next/head";
 
 export default function TransferNFT() {
@@ -10,7 +11,7 @@ export default function TransferNFT() {
       <Head>
         <title>NFTNest | Transfer NFT</title>
       </Head>
-      {currentAccount ? <TransferNFTPage /> : <h1>Connect Wallet</h1>}
+      {currentAccount ? <TransferNFTPage /> : <Unauthenticated>Connect Your Wallet</Unauthenticated>}
     </>
   );
 }

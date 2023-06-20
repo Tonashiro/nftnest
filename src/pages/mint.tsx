@@ -1,5 +1,6 @@
 import { useMetamaskState } from "@context/MetamaskContext";
 import { MintNFTPage } from "@organisms/MintNFTPage";
+import { Unauthenticated } from "@styles/ GlobalStyle";
 import Head from "next/head";
 
 export default function MintNFT() {
@@ -10,7 +11,7 @@ export default function MintNFT() {
       <Head>
         <title>NFTNest | Mint NFT</title>
       </Head>
-      {currentAccount ? <MintNFTPage /> : <h1>Connect Wallet</h1>}
+      {currentAccount ? <MintNFTPage /> : <Unauthenticated>Connect Your Wallet</Unauthenticated>}
     </>
   );
 }

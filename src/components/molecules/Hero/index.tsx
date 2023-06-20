@@ -5,9 +5,8 @@ const Hero = () => {
   return (
     <Container>
       <TextWrapper>
-        <Title>Just a preview of the official title</Title>
-        <Subtitle>This is first the subtitle subtitle subtitle</Subtitle>
-        <Subtitle>The second subtitle </Subtitle>
+        <Title>NFTNest</Title>
+        <Subtitle>Bringing your digital creations to life</Subtitle>
       </TextWrapper>
     </Container>
   );

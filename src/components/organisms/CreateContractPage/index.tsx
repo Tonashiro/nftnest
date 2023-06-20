@@ -1,6 +1,5 @@
 import { Button } from "@atoms/Button";
 import { Input } from "@atoms/Input";
-import { InputState } from "@atoms/Input/types";
 import { InputWrapper, PageWrapper } from "@styles/ GlobalStyle";
 import ReactLoading from "react-loading";
 import React, { useState } from "react";

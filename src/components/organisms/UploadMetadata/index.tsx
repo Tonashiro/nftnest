@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Input } from "@atoms/Input";
-import { InputWrapper, PageWrapper } from "@styles/ GlobalStyle";
+import { InputWrapper, Note, PageWrapper, Result } from "@styles/ GlobalStyle";
 import ReactLoading from "react-loading";
 import { Button } from "@atoms/Button";
-import { InputState } from "@atoms/Input/types";
 import { FileSelector } from "@atoms/FileSelector";
 import { ReactNotifications } from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 import { notification } from "@utils/notification";
 import axios from "axios";
 
-const UploadNFTPage = () => {
+const UploadMetadataPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const AUTHORIZATION = process.env.NEXT_PUBLIC_NFTPORT_API_KEY;
+  const [metadata, setMetadata] = useState();
   const [nftInfo, setNftInfo] = useState<any>({
     nft_name: "",
     nft_description: "",
@@ -39,6 +39,7 @@ const UploadNFTPage = () => {
       .then(function (response) {
         console.log(response.data);
         notification("NFT Metadata Created!", "success", response?.data.metadata_uri);
+        setMetadata(response?.data.metadata_uri);
         setIsLoading(false);
       })
       .catch(function (error) {
@@ -82,6 +83,10 @@ const UploadNFTPage = () => {
     <>
       <ReactNotifications />
       <PageWrapper>
+        <Note>
+          NOTE: You need to copy and store the result that will be shown bellow the button
+          <br /> after the metadata is successfully uploaded or you will lose it!
+        </Note>
         <InputWrapper>
           <Input name="nft_name" placeholder="Digite o nome do NFT" setter={setNftInfo} />
           <Input name="nft_description" placeholder="Digite a descrição do NFT" setter={setNftInfo} />
@@ -95,9 +100,10 @@ const UploadNFTPage = () => {
             <Button onClick={uploadToIPFS}>Upload NFT</Button>
           )}
         </InputWrapper>
+        {metadata && <Result>{metadata}</Result>}
       </PageWrapper>
     </>
   );
 };
 
-export { UploadNFTPage };
+export { UploadMetadataPage };

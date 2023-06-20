@@ -1,5 +1,6 @@
 import { useMetamaskState } from "@context/MetamaskContext";
 import { UpdateNFTPage } from "@organisms/UpdateNFTPage";
+import { Unauthenticated } from "@styles/ GlobalStyle";
 import Head from "next/head";
 
 export default function UpdateNFT() {
@@ -10,7 +11,7 @@ export default function UpdateNFT() {
       <Head>
         <title>NFTNest | Update NFT</title>
       </Head>
-      {currentAccount ? <UpdateNFTPage /> : <h1>Connect Wallet</h1>}
+      {currentAccount ? <UpdateNFTPage /> : <Unauthenticated>Connect Your Wallet</Unauthenticated>}
     </>
   );
 }

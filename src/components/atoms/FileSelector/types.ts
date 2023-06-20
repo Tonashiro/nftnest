@@ -1,7 +1,7 @@
 import { IMint } from "./../../organisms/MintNFTPage/types";
 import { IUpdate } from "./../../organisms/UpdateNFTPage/types";
 import { ITransfer } from "./../../organisms/TransferNFTPage/types";
-import { IUploadNFT } from "./../../organisms/UploadNFT/types";
+import { IUploadNFT } from "../../organisms/UploadMetadata/types";
 import { IContract } from "./../../organisms/CreateContractPage/types";
 import { SetStateAction, Dispatch } from "react";
 
