@@ -1,8 +1,8 @@
 import { useMetamaskState } from "@context/MetamaskContext";
-import { HTMLAttributes } from "react";
 import { ButtonWrapper, StyledButton } from "./styles";
+import { IWalletButton } from "@atoms/WalletButton/types";
 
-const WalletButton: React.FC<HTMLAttributes<HTMLButtonElement>> = () => {
+const WalletButton: React.FC<IWalletButton> = () => {
   const { currentAccount, connectWallet } = useMetamaskState();
 
   return (
