@@ -37,7 +37,6 @@ const CreateContractPage: React.FC<{ userWallet: string }> = ({ userWallet }) =>
     axios
       .request(options)
       .then(function (response) {
-        console.log("Contract Deployed!", response.data);
         notification("Contract Created and Deployed!", "success", response?.data.transaction_external_url);
         setIsLoading(false);
       })

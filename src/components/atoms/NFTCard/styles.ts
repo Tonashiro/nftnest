@@ -1,9 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const MainCard = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
+  height: fit-content;
   border-radius: 10px;
   position: relative;
   z-index: 2;
@@ -38,14 +39,8 @@ export const MainCard = styled.div`
   }
 `;
 
-export const NFTName = styled.h3`
+export const NFTName = styled.h3``;
 
-`;
+export const NFTDescription = styled.p``;
 
-export const NFTDescription = styled.p`
-
-`;
-
-export const NFTId = styled.p`
-
-`;
+export const NFTId = styled.p``;

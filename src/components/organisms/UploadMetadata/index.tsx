@@ -37,7 +37,6 @@ const UploadMetadataPage = () => {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
         notification("NFT Metadata Created!", "success", response?.data.metadata_uri);
         setMetadata(response?.data.metadata_uri);
         setIsLoading(false);

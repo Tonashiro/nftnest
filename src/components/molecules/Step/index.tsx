@@ -19,8 +19,16 @@ const Step: React.FC<IStepProps> = ({ stepNumber, title, backgroundImg, descript
         <Background side={side}>
           <Image src={backgroundImg} alt={stepImgAlt} width={400} height={400} quality={100} style={{}} />
         </Background>
-        <StepImage>
-          <Image src={stepImg} alt={stepImgAlt} width={900} height={400} quality={100} />
+        <StepImage side={side}>
+          <Image
+            src={stepImg}
+            alt={stepImgAlt}
+            width={761}
+            height={400}
+            className="step-image"
+            style={{ borderRadius: "10%" }}
+            quality={75}
+          />
         </StepImage>
       </ImagesWrapper>
 

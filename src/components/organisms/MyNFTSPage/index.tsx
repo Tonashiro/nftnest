@@ -19,7 +19,6 @@ const MyNFTSPage = () => {
       const url = `https://api.nftport.xyz/v0/accounts/${currentAccount}`;
       const AUTHORIZATION = process.env.NEXT_PUBLIC_NFTPORT_API_KEY;
 
-      console.log(AUTHORIZATION);
       await axios
         .get(url, {
           params: {
@@ -44,8 +43,6 @@ const MyNFTSPage = () => {
 
     getNfts();
   }, [currentAccount]);
-
-  console.log(allNfts);
 
   return (
     <PageWrapper>

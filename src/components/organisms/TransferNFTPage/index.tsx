@@ -37,7 +37,6 @@ const TransferNFTPage = () => {
         }
       )
       .then(function (response) {
-        console.log(response.data);
         notification("NFT Transfered!", "success", response?.data.transaction_external_url);
         setIsLoading(false);
       })

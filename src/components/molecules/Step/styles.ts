@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IStepProps } from "./types";
 
 interface SideProps {
   side: "right" | "left";
@@ -41,9 +42,15 @@ export const Background = styled.div<SideProps>`
   opacity: 0.3;
 `;
 
-export const StepImage = styled.div`
-  width: 100%;
-  height: 100%;
+export const StepImage = styled.div<Pick<IStepProps, "side">>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 10%;
+  margin: ${({ side }) => (side === "right" ? "0 0 0 20%" : "0 0 0 8%")};
+  width: 650px;
+  height: 400px;
   z-index: 99;
 `;
 

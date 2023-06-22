@@ -1,5 +1,11 @@
 import triangleImg from "@assets/dots.svg";
 import testImg from "@assets/test.svg";
+import connectWallet from "@assets/gifs/connect-wallet.gif";
+import createContract from "@assets/gifs/create-contract.gif";
+import uploadMetadata from "@assets/gifs/upload-metadata.gif";
+import mintNFT from "@assets/gifs/mint-nft.gif";
+import updateMetadata from "@assets/gifs/update-metadata.gif";
+import transferNFT from "@assets/gifs/transfer-nft.gif";
 
 enum side {
   right = "right",
@@ -12,7 +18,7 @@ export const steps = [
     description:
       "In order to use all the NFTNest features, you need to connect your wallet and give permissions to the application interact with you.",
     side: side.left,
-    stepImg: testImg,
+    stepImg: connectWallet,
     stepNumber: 1,
     backgroundImg: triangleImg,
     stepImgAlt: "Connect your wallet gif",
@@ -22,7 +28,7 @@ export const steps = [
     description:
       "A smart contract is what will store your NFT collection in the Blockchain. So you need to add the information you want for your NFT collection.",
     side: side.right,
-    stepImg: testImg,
+    stepImg: createContract,
     stepNumber: 2,
     backgroundImg: triangleImg,
     stepImgAlt: "Create smart contract gif",
@@ -32,7 +38,7 @@ export const steps = [
     description:
       "This is where you will upload your metadata to the Blockchain, but this upload DOES NOT means that it is a NFT and IS NOT in your wallet.\nAdd a name, a description for your NFT and upload the image you want on it.\n\nAfter that you will receive the METADATA of the file in the Blockchain.",
     side: side.left,
-    stepImg: testImg,
+    stepImg: uploadMetadata,
     stepNumber: 3,
     backgroundImg: triangleImg,
     stepImgAlt: "Uploading a metadata gif",
@@ -42,7 +48,7 @@ export const steps = [
     description:
       "This is the step that will actually create your NFT, so you will need to fill all the required fields and after that you can see the NFT inside the wallet you asked the mint to go to.",
     side: side.right,
-    stepImg: testImg,
+    stepImg: mintNFT,
     stepNumber: 4,
     backgroundImg: triangleImg,
     stepImgAlt: "Mint NFT gif",
@@ -52,7 +58,7 @@ export const steps = [
     description:
       "After you minted a NFT, if necessary you can change your NFT data by creating a new metadata in the 'Upload Metadata' menu. After you create a new metadata, you need to refer the contract address and NFT UID that you want to change the information.\nThe NFT UID you can find in 'My NFTs' menu.",
     side: side.left,
-    stepImg: testImg,
+    stepImg: updateMetadata,
     stepNumber: 5,
     backgroundImg: triangleImg,
     stepImgAlt: "Updating NFT gif",
@@ -62,7 +68,7 @@ export const steps = [
     description:
       "If you want to transfer your NFT to someone else, you just need to make sure you own that specific NFT, get the NFT CID on 'My NFTS' menu and then add the wallet to where the NFT will be transfered to.",
     side: side.right,
-    stepImg: testImg,
+    stepImg: transferNFT,
     stepNumber: 6,
     backgroundImg: triangleImg,
     stepImgAlt: "Transfer NFT gif",

@@ -35,7 +35,6 @@ const UpdateNFTPage = () => {
         }
       )
       .then((response) => {
-        console.log(response.data);
         notification("Metadata Changed!", "success", response?.data.transaction_external_url);
         setIsLoading(false);
       })
